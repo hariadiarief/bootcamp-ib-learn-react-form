@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <Register />
-        <TodoApp />
+        <TodoApp title="This is Todo (this title made by props)" />
       </div>
     );
   }
