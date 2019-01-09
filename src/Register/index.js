@@ -5,7 +5,9 @@ class Register extends Component {
     super();
 
     this.state = {
-      email: ""
+      email: "",
+      password: "",
+      result: ""
     };
   }
 
@@ -13,17 +15,30 @@ class Register extends Component {
     this.setState({ email: event.target.value });
   };
 
+  handlePasswordInput = event => {
+    this.setState({ password: event.target.value });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const result = `${this.state.email} ${this.state.password}`;
+    this.setState({ result: result });
+  };
+
   render() {
     return (
       <form>
         <h3>Register Hire :</h3>
+
         <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          value={this.state.value}
-          onChange={this.handleEmailInput}
-        />
+        <input type="email" onChange={this.handleEmailInput} />
+
+        <label htmlFor="password">Password:</label>
+        <input type="password" onChange={this.handlePasswordInput} />
+
         <input type="submit" value="Register" />
+
+        <p>{this.state.result}</p>
       </form>
     );
   }
