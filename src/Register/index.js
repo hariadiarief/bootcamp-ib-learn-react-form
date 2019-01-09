@@ -27,7 +27,7 @@ class Register extends Component {
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h3>Register Hire :</h3>
 
         <label htmlFor="email">Email:</label>
